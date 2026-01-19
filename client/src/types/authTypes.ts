@@ -10,7 +10,7 @@ export interface UserAttributes {
 export interface SignUpData {
   username: string;
   email: string;
-  password: string;
+  password: number;
 }
 
 export interface SignInData {

@@ -3,7 +3,7 @@ import SignUpForm from '../../features/SignUpForm/SignUpForm';
 import type { UserAttributes } from '../../types/authTypes';
 
 interface SignUpPageProps {
-  setUser: (user: UserAttributes | null) => void;
+  setUser: (user: UserAttributes | null) => Promise<void>;
 }
 
 export default function SignUpPage({ setUser }: SignUpPageProps): React.JSX.Element {

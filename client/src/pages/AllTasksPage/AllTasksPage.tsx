@@ -12,7 +12,7 @@ import type { TaskAttributes } from '../../types/taskTypes';
 
 interface AllTasksPageProps {
   user: UserAttributes | null;
-  allTasks: TaskAttributes[];
+  allTasks: TaskAttributes;
   setAllTasks: (allTasks: TaskAttributes[]) => void;
 }
 
@@ -26,7 +26,7 @@ export default function AllTasksPage({
   useEffect(() => {
     const getAllTasks = async (): Promise<void> => {
       try {
-        const response = await TaskApi.getAll();
+        const response = await TaskApi.getAllTasks();
         console.log(response);
         console.log(response.data);
 

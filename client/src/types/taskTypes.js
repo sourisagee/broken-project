@@ -6,7 +6,7 @@ export interface TaskAttributes {
   genre: string;
   description: string;
   user_id: number;
-  User: UserAttributes;
+  User: UserAttributes[];
   createdAt?: string;
   updatedAt?: string;
 }

@@ -5,7 +5,7 @@ interface SignInPageProps {
   setUser: (user: UserAttributes | null) => void;
 }
 
-export default function SignInPage({ setUser }: SignInPageProps): React.JSX.Element {
+export default function SignInPage({ setUser }): React.JSX.Element {
   return (
     <>
       <SignInForm setUser={setUser} />

@@ -28,7 +28,7 @@ export default function UserTasksPage({ user }: UserTasksPageProps): React.JSX.E
   const [userTasks, setUserTasks] = useState<TaskAttributes[]>([]);
 
   useEffect(() => {
-    const getUserTasks = async (): Promise<void> => {
+    const getUserTasks = async (): void => {
       if (!user) return;
 
       try {
@@ -49,10 +49,9 @@ export default function UserTasksPage({ user }: UserTasksPageProps): React.JSX.E
     if (!user) return;
 
     try {
-      const response = await TaskApi.create({
+      const response = TaskApi.create({
         title: task.title.trim(),
         genre: task.genre.trim(),
-        description: task.description.trim(),
         user_id: user.id,
       });
       console.log('Full response:', response);
@@ -69,7 +68,7 @@ export default function UserTasksPage({ user }: UserTasksPageProps): React.JSX.E
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setTask((prev) => ({
-      ...prev,
+      prev,
       [event.target.name]: event.target.value,
     }));
   };

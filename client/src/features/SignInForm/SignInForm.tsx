@@ -18,7 +18,7 @@ const INITIAL_INPUTS_DATA: SignInInputs = {
   password: '',
 };
 
-export default function SignInForm({ setUser }: SignInFormProps): React.JSX.Element {
+export function SignInForm({ setUser }: SignInFormProps): React.JSX.Element {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState<SignInInputs>(INITIAL_INPUTS_DATA);
 
